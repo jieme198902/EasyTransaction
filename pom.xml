@@ -1,35 +1,35 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  
-  <groupId>com.yiqiniu.easytrans</groupId>
-  <artifactId>easytrans-core</artifactId>
-  <version>0.2.1-RELEASE</version>
-  
-  	<repositories>
-		<repository>
-			<id>snapshots</id>
-			<url>http://192.168.1.178:8081/nexus/content/repositories/snapshots</url>
-		</repository>
-	</repositories>
+	<modelVersion>4.0.0</modelVersion>
 
-	<distributionManagement>
-		<repository>
-			<id>releases</id>
-			<url>http://192.168.1.178:8081/nexus/content/repositories/releases</url>
-		</repository>
-		<snapshotRepository>
-			<id>snapshots</id>
-			<url>http://192.168.1.178:8081/nexus/content/repositories/snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
-  
+	<groupId>com.yiqiniu.easytrans</groupId>
+	<artifactId>easytrans-core</artifactId>
+	<version>0.2.1-RELEASE</version>
+
+	<!--<repositories>-->
+	<!--<repository>-->
+	<!--<id>snapshots</id>-->
+	<!--<url>http://192.168.1.178:8081/nexus/content/repositories/snapshots</url>-->
+	<!--</repository>-->
+	<!--</repositories>-->
+
+	<!--<distributionManagement>-->
+	<!--<repository>-->
+	<!--<id>releases</id>-->
+	<!--<url>http://192.168.1.178:8081/nexus/content/repositories/releases</url>-->
+	<!--</repository>-->
+	<!--<snapshotRepository>-->
+	<!--<id>snapshots</id>-->
+	<!--<url>http://192.168.1.178:8081/nexus/content/repositories/snapshots/</url>-->
+	<!--</snapshotRepository>-->
+	<!--</distributionManagement>-->
+
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<org.springframework.version>3.2.4.RELEASE</org.springframework.version>
+		<org.springframework.version>4.3.7.RELEASE</org.springframework.version>
 	</properties>
 
-<dependencies>
+	<dependencies>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -49,14 +49,14 @@
 			<version>1.2.17</version>
 		</dependency>
 
-		
+
 		<!-- For Interface Concrete implements -->
 		<dependency>
 			<groupId>org.apache.curator</groupId>
 			<artifactId>curator-recipes</artifactId>
 			<version>2.11.1</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.101tec</groupId>
 			<artifactId>zkclient</artifactId>
@@ -68,19 +68,19 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>dubbo</artifactId>
 			<version>2.5.3</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.aliyun.openservices</groupId>
 			<artifactId>ons-client</artifactId>
 			<version>1.2.5</version>
 		</dependency>
-		
+
 		<!-- For Tests -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -94,69 +94,69 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.hamcrest</groupId>
 			<artifactId>hamcrest-all</artifactId>
 			<version>1.3</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>${org.springframework.version}</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
 			<version>1.0.9</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.13</version>
 			<scope>test</scope>
 		</dependency>
-			
+
 		<dependency>
 			<groupId>org.slf4j</groupId>
-  			<artifactId>slf4j-log4j12</artifactId>
-  			<version>1.7.2</version>
-  			<scope>test</scope>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.2</version>
+			<scope>test</scope>
 		</dependency>
-		
-		
-</dependencies>
-  
-  <build>
-    <sourceDirectory>src/main/java</sourceDirectory>
-    <testSourceDirectory>src/test/java</testSourceDirectory>
 
-	<resources>
+
+	</dependencies>
+
+	<build>
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<testSourceDirectory>src/test/java</testSourceDirectory>
+
+		<resources>
 			<resource>
-			<directory>src/main/resources</directory>
-		</resource>
-	</resources>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
 
-	<testResources>
-		<testResource>
-			<directory>src/test/resources</directory>
-		</testResource>
-	</testResources>
-	
-    <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+			</testResource>
+		</testResources>
+
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
